@@ -4,11 +4,51 @@
 
 #ifndef TABLES_H
 #define TABLES_H
+#include <array>
 
+#include "Types.h"
 
-
-class Tables {
-
+namespace DeepKnight::Tables {
+   constexpr std::array<Bitboard, 8> MASK_RANK{
+      0x00000000000000FF,
+      0x000000000000FF00,
+      0x0000000000FF0000,
+      0x00000000FF000000,
+      0x000000FF00000000,
+      0x0000FF0000000000,
+      0x00FF000000000000,
+      0xFF00000000000000
+   };
+   constexpr std::array<Bitboard, 8> MASK_FILE{
+      0x0101010101010101,
+      0x0202020202020202,
+      0x0404040404040404,
+      0x0808080808080808,
+      0x1010101010101010,
+      0x2020202020202020,
+      0x4040404040404040,
+      0x8080808080808080,
+   };
+   constexpr std::array<Bitboard, 8> CLEAR_RANK{
+      0xFFFFFFFFFFFFFF00,
+      0xFFFFFFFFFFFF00FF,
+      0xFFFFFFFFFF00FFFF,
+      0xFFFFFFFF00FFFFFF,
+      0xFFFFFF00FFFFFFFF,
+      0xFFFF00FFFFFFFFFF,
+      0xFF00FFFFFFFFFFFF,
+      0x00FFFFFFFFFFFFFF
+   };
+   constexpr std::array<Bitboard, 8> CLEAR_FILE{
+      0xFEFEFEFEFEFEFEFE,
+      0xFDFDFDFDFDFDFDFD,
+      0xFBFBFBFBFBFBFBFB,
+      0xF7F7F7F7F7F7F7F7,
+      0xEFEFEFEFEFEFEFEF,
+      0xDFDFDFDFDFDFDFDF,
+      0xBFBFBFBFBFBFBFBF,
+      0x7F7F7F7F7F7F7F7F
+   };
 };
 
 

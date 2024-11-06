@@ -7,4 +7,6 @@ add_executable(DeepKnight main.cpp
         src/Board.cpp
         src/Board.h
         src/Types.h
+        src/Tables.cpp
+        src/Tables.h
 )

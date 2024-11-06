@@ -94,11 +94,13 @@ namespace DeepKnight {
    ENABLE_INCR_OPERATORS_ON(Square)
    ENABLE_INCR_OPERATORS_ON(File)
    ENABLE_INCR_OPERATORS_ON(Rank)
+   ENABLE_INCR_OPERATORS_ON(Piece)
 #undef ENABLE_INCR_OPERATORS_ON
 
    constexpr Bitboard getBoardIndex(const Square& sq) { return Bitboard{1} << sq; }
    constexpr Bitboard getBoardIndex(const Rank& r, const File& f) { return Bitboard{1} << ((r << 3) + f); }
    constexpr Piece    makePiece(const Color& c, const PieceType& pt) { return Piece{(c * 6) + pt}; }
+   constexpr Square   makeSquare(const Rank& r, const File& f) { return Square{(r << 3) + f}; }
    constexpr bool     validSquare(const Square& sq) { return sq >= SQ_A1 && sq <= SQ_H8; }
 
 }

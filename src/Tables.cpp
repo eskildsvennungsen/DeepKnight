@@ -3,3 +3,7 @@
 //
 
 #include "Tables.h"
+
+namespace Tables {
+
+}
